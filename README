@@ -1,0 +1,71 @@
+Hey Stewart, 
+
+Please confirm you’ve completed all the projects and assignments covered in the courses (please attach a link to your github repo). If you have completed the courses, please let me know:
+
+what you found helpful
+what didn't work well for you
+how well you retained the concepts
+which parts were difficult
+which parts were easy
+This feedback will help us improve the course, help us understand your perspective and how well you received the material, and also serve as verification that you completed the courses. I didn’t see any questions from you in those two courses, so the more you can tell us the better I’ll know where you are.
+The assessment will cover some of the following topics: 
+your knowledge of and comfort level with using photoshop to work with design assets
+your knowledge of using semantically correct HTML and CSS to style web pages
+working with responsive breakpoints
+your knowledge of javascript - what we covered in the second course, but mostly primitives, objects, functions, arrays, and general programming with javascript. 
+HTML5 APIs such as localStorage and canvas
+your knowledge of jQuery, DOM manipulation and Ajax
+Please reply to confirm that you’re comfortable with the topics above, and I’ll give you a project, which you'll have 2-3 days to finish and we’ll have a call where it’s going to be mostly you talking through the project and I’ll “poke around” and ask questions, and have you live code to add/change behaviors. What I’m looking from you is 1) clarity on the concepts that we covered and 2) fluency in implementing front end features. 
+
+=========================================
+
+Thanks for the response Stewart! 
+
+- on Photoshop, that’s fine, because much of the Front End Developer role is to *read* photoshop files and almost never write into it (you’ll typically work with a designer who come up with the design, and tweak it for changing requirements). So the important skills here are to get images out the PSD, measure pixels, and interpret design intentions and interactions (also involves a lot of talking to clients / designers). For simple projects, you’re expected to build from scratch starting with HTML/CSS directly. Believe it or not, just knowing this much may be enough to get front end jobs.. not good ones, though.
+
+- on JavaScript’s prototypical nature and how it’s different from classical OO - yes it takes some time to get used to, but this may help: in the OO paradigm where an object encapsulates a piece of data to represent a state, then the next question is how the object would respond to messages, as “method invocations”. The classical OO school would group behaviors together and make them explicit as “classes”, and provide a “look up path” to find methods via inheritance; where the prototypical OO school would just align objects themselves in a hierarchy as the “look up path”, because they believe behaviors themselves are just data (in javascript’s words, functions are just objects), so it doesn’t make sense to organize behaviors differently in “classes”, they should just be together with other data. 
+
+and here’s the assessment project: a leveled up Todo list, like what’s in here: http://todos.meteor.com, without SIGN IN and JOIN, and with different behaviors. 
+
+I’m dividing this into a few milestones:
+
+Milestone 1:  the look and feel
+
+- the look and feel with HTML/CSS (do it from scratch if you can, but feel free to cheat :> )
+- responsive breakpoints (just use their behavior for this too)
+
+
+Milestone 2: a Todo list
+
+- focus on the right panel, you can add a task, and delete a task (we’ll do mark as complete later), like it’s done on this site. 
+- store the collection of todos in localStorage and retrieve when the page is reloaded
+
+
+Milestone 3: a Todo list with due dates and mark todos as complete
+
+- after a todo is created, you can click on it which will bring up a modal that shows details of the todo. here you can add a due date for the todo, after you click on “save”, it should close the modal, save it to the todo and on the todo list, have some visual indication of due date of a task
+
+- in the details modal of a todo, have a button to mark this todo as complete. once clicked, this should close the modal, add some visual indication that this task is completed. 
+- all completed tasks should be on the bottom of the todo list. 
+
+Milestone 4: a Todo list by months
+
+- this takes us to the left panel. instead of maintaining multiple lists, we’re going to have a list of months for due dates of todos, so it’ll look like: 
+
+    - No Due Date
+    - 1/2016
+    - 2/2016
+    - 3/206
+    ….
+    - Completed
+
+- by default, all todos are created in the “No Due Date” list, but when a Todo has due date, it should be put into the month that it’s due. 
+- when a todo is completed, it should be moved to the “Completed” list. 
+
+
+Let me know if this is clear! I can make a video on this if it needs more clarification. Also, I realize that 2-3 days may be pushing it, so feel free to take more time to complete as necessary. This may also be a bit harder than what should be the first Front End assessment since we’re just starting to do it, but we rather err on the hard side. 
+
+
+You can book a slot on my calendar when you’re ready: 
+
+http://knwang.youcanbook.me/

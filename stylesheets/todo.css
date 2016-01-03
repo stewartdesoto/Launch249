@@ -1,0 +1,113 @@
+@import url("whitespace-reset.css");
+
+body {
+  font: normal 1em Helvetica, arial, sans-serif;
+  background: linear-gradient(to bottom, #4444aa 0%, #cccccc 100%);
+  color: #9999dd;  
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+#lists {
+  display: inline-block;
+  width: 255px;
+  height: 100vh;
+  border: solid 1px;
+}
+
+#lists p {
+  margin: 8px 40px 8px 25px;
+}
+
+
+#lists li {
+  border-bottom: 1px solid #999999;
+}
+
+#lists li:first-child {
+  margin-top: 40px;
+  color: #aaaaee;
+  font-weight: bold;
+}
+
+#lists li p  {
+  margin: 8px 40px 8px 25px;   
+}
+
+#work_area {
+  position: relative;
+  display: inline-block;
+  width: 70%;
+  vertical-align: top;
+  margin: 0 0 0 -4px;
+}
+
+#work_area .nav {
+  background: #ccccdd;
+  color: #333333;
+  padding: 15px;
+}
+
+#work_area .nav > p {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#list_name {
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+#get_todo input {
+  background: transparent;
+  border: 0px;
+  color: #222222;
+  font-size: 1em;
+  max-length: 100;
+}
+
+#get_todo input:focus {
+  outline: 0;
+}
+
+#list_task_count {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: #333388;
+  color: #dddddd;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 0.7em;
+  vertical-align: middle;
+} 
+
+#todo_list { 
+  background: #ffffff;
+  color: #555555;
+  height: 100vh;
+}
+
+#todo_list li {
+  position: relative;
+  padding: 10px 40px 10px 25px;   
+  border-bottom: 1px solid #999999;
+}
+
+#todo_list li a {
+  display: none;
+  float: right;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-image: url("../images/ic_delete_black_24dp_1x.png");
+}
+
+
+@media()
