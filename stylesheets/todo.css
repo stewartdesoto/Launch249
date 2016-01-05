@@ -8,6 +8,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 li {
@@ -18,7 +19,6 @@ li {
   display: inline-block;
   width: 255px;
   height: 100vh;
-  border: solid 1px;
 }
 
 #lists p {
@@ -36,8 +36,8 @@ li {
   font-weight: bold;
 }
 
-#lists li p  {
-  margin: 8px 40px 8px 25px;   
+#lists li a  {
+  padding: 8px 40px 8px 25px;   
 }
 
 #work_area {
@@ -61,7 +61,7 @@ li {
 
 #list_name {
   vertical-align: middle;
-  padding-right: 10px;
+  padding: 0 10px;
 }
 
 #get_todo input {
@@ -78,15 +78,26 @@ li {
 
 #list_task_count {
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  background: #333388;
+  padding: 0 10px;
+  line-height: 20px;
+  background: #4444aa;
   color: #dddddd;
   text-align: center;
   border-radius: 8px;
   font-size: 0.7em;
   vertical-align: middle;
+
 } 
+
+#menu_icon a {
+  display: none;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-image: url("../images/ic_menu_black_24dp_1x.png");
+  text-indent: -9999px;
+}
+
 
 #todo_list { 
   background: #ffffff;
@@ -109,5 +120,82 @@ li {
   background-image: url("../images/ic_delete_black_24dp_1x.png");
 }
 
+#todo_list li h3 {
+  display: inline;
+  font-weight: normal;
+}
 
-@media()
+#todo_list li date {
+  padding-left: 100px;
+}
+
+#todo_list li[data-completed="true"] {
+  text-decoration: line-through;
+}
+
+#modal_blocking_layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#modal {
+  display: none;
+  position: absolute;
+  width: 550px;
+  left: 50%;
+  top: 100px;
+  margin: 0 0 0 -300px;
+  z-index: 3;
+  padding: 30px;
+  background: white;
+  color: #333333;
+}
+
+#modal h3 {
+  color: #333333;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 25px;
+}
+
+#todo_detail .button {
+  display: inline-block;
+  border-radius: 10px;
+  color: #eeeeee;
+  font-size: 0.8em;
+  padding: 4px;
+  margin: 0 11px;
+  width: 65px;
+  text-align: center;
+}
+
+#todo_detail  a[type="save"] {
+    background-color: #77bb44;
+}
+
+#todo_detail a[type="cancel"] {
+    background-color: #3333dd;
+}
+
+#todo_detail a[type="completed"] {
+    background-color: #cc9977;
+}
+
+@media (max-width: 870px) {
+  #lists {
+    display: none;
+  }
+  #work_area {
+    width: 100%;
+  }
+  #menu_icon a {
+    display: inline-block;
+  }
+}
+

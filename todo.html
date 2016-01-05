@@ -12,29 +12,55 @@
     <main>
       <div id="lists">
         <ul>
-          <li><p>+ New List</p></li>
-          <li><p>List A</p></li>
-          <li><p>List B</p></li>
-          <li><p>List C</p></li>
+          <li><p>Filter Todos by:</p></li>
+          <li ><p><a id="all_todos" href="#">All Todos</a></p></li>
+          <li ><p><a id="no_due_date" href="#">No Due Date</a></p></li>
+          <li >
+            <div id="by_month">
+              <p><a data-month="1" data-year="2016" href="#">January 2016</a></p>
+              <p><a data-month="2" data-year="2016" href="#">February 2016</a></p>
+              <p><a data-month="3" data-year="2016" href="#">March 2016</a></p>
+              <p><a data-month="4" data-year="2016" href="#">April 2016</a></p>
+            </div>
+          </li>
+          <li id="completed"><p><a href="#">Completed</a></p></li>
         </ul>
       </div>
       <div id="work_area">
         <div class="nav">
           <header>
-            <p><span id="list_name">List A:</span>
-              <span id="list_task_count">2</span></p>
+            <p>
+              <span id="menu_icon"><a href="#">0</a></span>
+              <span id="list_name">TODOs:</span>
+              <span id="list_task_count">0</span>
+            </p>
+
           </header>
-          <p>
+          <p></p>
             <form id="get_todo" action="" method="">
-              <input type="text" placeholder="Type to add new tasks" autofocus /></p>
+              <input type="text" placeholder="Type to add new tasks" autofocus />
+              <a href="#" type="cancel" class="button">Clear list</a>
             </form>
         </div>
         <div id="todo_list">
-          <ul>
- 
-          </ul>
+          <div class="no_due_dates"></div>
+          <div class="with_dates"></div>
+          <div class="month"></div>
+          <div class="completed"></div>
         </div>
       </div>
+      <div id="modal">
+        <h3></h3>
+        <form id="todo_detail">
+          <input type="hidden" name="id"></input>
+          <label for="due_date">Due Date: </label>
+          <input type="Date" id="due_date"></input>
+          <a href="#" type="save" class="button">Save</a>
+          <a href="#" type="cancel" class="button">Cancel</a>
+          <a href="#" type="completed" class="button">Completed</a>
+        </form>
+      </div>
+      <div id="modal_blocking_layer"></div>
     </main>
   </body>
 
