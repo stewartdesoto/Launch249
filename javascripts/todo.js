@@ -73,7 +73,6 @@ $("#all_todos").on("click", function(e) {
 
   $("#get_todo [type='cancel']").on("click", function(e) {
     e.preventDefault();
-    alert("clearing");
     localStorage.clear();
     $noDueDateTodos = $("<ul/>");
     $dateTodos = $("<ul/>");
@@ -122,11 +121,8 @@ $("#all_todos").on("click", function(e) {
       return (+$(this).data("id") === +id);
     });
     //$li.data("completed", "true"); doesn't change DOM
-    console.log("$completedTodos = " + $completedTodos.length);
     $li.attr("data-completed", true);
-    console.log($li.html());
     $completedTodos.append($li);
-    console.log("$completedTodos = " + $completedTodos.length);
     renderList();
     $("#modal, #modal_blocking_layer").hide();
   });
@@ -139,15 +135,7 @@ $("#all_todos").on("click", function(e) {
   });
 
   $("#menu_icon").on("click", "a", function() {
-    alert("clicked expand window");
-    $lists = $("#lists");
-    $work_area = $("#work_area");
-    $lists.show();
-    $lists.css("display", "inline-block");
-    $lists.css("width", "255px");
-    $lists.css("height", "100vh");
-    $work_area.css("width", "50%");
-
+    $("#lists, #work_area").toggleClass("expanded single");
   });
 
   $(window).on ("unload", function() {
@@ -155,7 +143,6 @@ $("#all_todos").on("click", function(e) {
   });
 
   function saveList() {
-    alert("saving list");
     localStorage.setItem("noDueDateTodos", $noDueDateTodos.html() );
     localStorage.setItem("dateTodos", $dateTodos.html() );
     localStorage.setItem("completedTodos", $completedTodos.html() );
@@ -176,7 +163,6 @@ $("#all_todos").on("click", function(e) {
 
     var listItems = $dateTodos.children("li");
     listItems.sort( function(li1, li2) {
-      alert("inside sorting");
       date1 = $(li1).find("date").text();
       date2 = $(li2).find("date").text();
 
@@ -194,8 +180,6 @@ $("#all_todos").on("click", function(e) {
   }
 
   function renderList() {
-
-    console.log($dateTodos.html());
 
     $("#todo_list div.no_due_dates").html($noDueDateTodos);
     $("#todo_list div.with_dates").html($dateTodos);

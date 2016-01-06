@@ -126,7 +126,8 @@ li {
 }
 
 #todo_list li date {
-  padding-left: 100px;
+  position: absolute;
+  left: 200px;
 }
 
 #todo_list li[data-completed="true"] {
@@ -188,14 +189,26 @@ li {
 }
 
 @media (max-width: 870px) {
-  #lists {
-    display: none;
-  }
-  #work_area {
-    width: 100%;
-  }
   #menu_icon a {
     display: inline-block;
   }
+  #lists.single {
+    display: none;
+  }
+  #work_area.single {
+    width: 100%;
+  }
+  #lists.expanded {
+    display: inline-block;
+    width: 255px;
+    height: 100vh;
+  }
+  #work_area.expanded {
+    display: inline-block;
+    overflow: auto;
+    scrollbar-base-color:#ffeaff;
+    width: 40%;
+  }
+
 }
 
