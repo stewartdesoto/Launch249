@@ -1,11 +1,12 @@
 $(function() {
 
   var nextId;
-  var $noDueDateTodos = $("<ul/>");
-  var $dateTodos = $("<ul/>");
-  var $monthTodos = $("<ul/>");
-  var $completedTodos  = $("<ul/>");
+  var $noDueDateTodos;
+  var $dateTodos;
+  var $monthTodos;
+  var $completedTodos;
 
+  resetLists();
   loadList();
 
 $("#all_todos").on("click", function(e) {
@@ -31,7 +32,7 @@ $("#all_todos").on("click", function(e) {
     var $month_todos = $todos.filter( function(idx, itm) {
       var year = $(itm).find("date").text().slice(0,4);
       var month = $(itm).find("date").text().slice(5,7);
-      if (+year == yr && +month == mth ) {
+      if (+year === yr && +month === mth ) {
         return true;
       } else {
         return false;
@@ -68,17 +69,12 @@ $("#all_todos").on("click", function(e) {
     $noDueDateTodos.append($li);
     renderList();
     $input.val("");
-
   });
 
   $("#get_todo [type='cancel']").on("click", function(e) {
     e.preventDefault();
     localStorage.clear();
-    $noDueDateTodos = $("<ul/>");
-    $dateTodos = $("<ul/>");
-    $completedTodos  = $("<ul/>");
-    $monthTodos  = $("<ul/>");
-
+    resetLists();
     renderList();
   });
 
@@ -98,8 +94,8 @@ $("#all_todos").on("click", function(e) {
   $("#todo_detail [type='save']").on("click", function() {
     var id = $("[type='hidden']").val();
     var date = $("[type='date']").val();
-    $lis = $("#todo_list li");
-    $li = $lis.filter( function(index) {
+    var $lis = $("#todo_list li");
+    var $li = $lis.filter( function(index) {
       return (+$(this).data("id") === +id);
     });
     $li.find("date").text(date);
@@ -116,8 +112,8 @@ $("#all_todos").on("click", function(e) {
 
   $("#todo_detail [type='completed']").on("click", function() {
     var id = $("[type='hidden']").val();
-    $lis = $("#todo_list li");
-    $li = $lis.filter( function(index) {
+    var $lis = $("#todo_list li");
+    var $li = $lis.filter( function(index) {
       return (+$(this).data("id") === +id);
     });
     //$li.data("completed", "true"); doesn't change DOM
@@ -142,6 +138,13 @@ $("#all_todos").on("click", function(e) {
     saveList();
   });
 
+  function resetLists() {
+    $noDueDateTodos = $("<ul/>");
+    $dateTodos = $("<ul/>");
+    $completedTodos  = $("<ul/>");
+    $monthTodos  = $("<ul/>");
+  }
+
   function saveList() {
     localStorage.setItem("noDueDateTodos", $noDueDateTodos.html() );
     localStorage.setItem("dateTodos", $dateTodos.html() );
@@ -163,8 +166,8 @@ $("#all_todos").on("click", function(e) {
 
     var listItems = $dateTodos.children("li");
     listItems.sort( function(li1, li2) {
-      date1 = $(li1).find("date").text();
-      date2 = $(li2).find("date").text();
+      var date1 = $(li1).find("date").text();
+      var date2 = $(li2).find("date").text();
 
       if ( date1 > date2 ) {
         return 1;
